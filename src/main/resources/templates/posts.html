@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html th:replace="layout/mainLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+  <header class=" py-3 bg-primary text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1><i class="bi bi-pencil-square mr-3"></i>Posts</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-light py-5 mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-8">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Posts......">
+            <div class="input-group-append">
+              <a href="#" class="btn btn-primary">Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div th:replace="fragments/post-table.html :: postTable"></div>
+
+
+</main>
+
+</body>
+</html>

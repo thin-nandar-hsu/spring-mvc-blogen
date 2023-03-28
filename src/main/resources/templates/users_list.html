@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html th:replace="layout/mainLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<main role="main">
+  <header class="py-3 text-white" style="background: #c6c8ca;">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1><i class="bi bi-person-circle mr-3"></i>Users</h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-light py-5 mb-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-8">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search Users....">
+            <div class="input-group-append">
+              <a href="#" class="btn " style="background: #c6c8ca;">Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-header">
+              <h3>Latest Users</h3>
+
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Post Registered</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="us : ${allUsers}">
+                  <td th:text="${us.id}"></td>
+                  <td th:text="${us.name}"> </td>
+                  <td th:text="${us.email}"></td>
+                  <td th:text="${us.dateRegistered}"></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
